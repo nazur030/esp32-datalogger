@@ -59,23 +59,34 @@ Key reasons for choosing ESP32:
 
 ---
 
-### 🔌 Sensor Interfaces
+### 🔌 Sensor & I/O Interfaces
 
-The hardware supports multiple sensor connection options to maintain modularity:
+The hardware supports multiple **sensor and control interfaces** to maintain modularity
+and compatibility with industrial devices.
 
-- **Analog Inputs:**  
-  Used for simple sensors requiring ADC measurements
+- **Analog Inputs**  
+  Used for sensors requiring ADC measurements such as voltage, current,
+  or analog transducers.
 
-- **I2C Interface:**  
-  Shared bus for digital sensors such as environmental or industrial modules
+- **Digital Inputs (DI)**  
+  Designed for status or event detection, such as dry contacts,
+  switches, or alarm signals.
 
-- **UART Interface:**  
-  Reserved for sensors or modules requiring serial communication (e.g. Modbus devices)
+- **Digital Outputs (DO)**  
+  Used for simple control actions, including relay activation
+  or external device triggering.
 
-Interface selection was designed to:
-- Minimize pin conflicts
-- Allow sensor replacement without major PCB changes
-- Support both low-speed and higher-speed data acquisition
+- **I2C Interface**  
+  Shared digital bus for sensors such as environmental,
+  pressure, or industrial monitoring modules.
+
+- **RS-485 (Modbus RTU)**  
+  Supported via UART for communication with industrial
+  sensors and devices using Modbus RTU protocol.
+
+- **UART Interface**  
+  Reserved for serial-based peripherals or communication modules
+  when RS-485 is not required.
 
 ---
 
@@ -178,6 +189,13 @@ Received data is:
   - Basic charts
   - Status monitoring
   - Data inspection for debugging and validation
+
+#### Database View (phpMyAdmin)
+<img width="1624" height="458" alt="image" src="https://github.com/user-attachments/assets/5105491e-9e17-4193-866e-064929a766de" />
+
+
+#### Simple Dashboard View
+<img width="1307" height="361" alt="image" src="https://github.com/user-attachments/assets/bd925805-650f-498e-972f-6b066ae1fe30" />
 
 > Dashboard implementation is intentionally kept simple and is not production-grade.
 
