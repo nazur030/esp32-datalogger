@@ -16,8 +16,6 @@ Key objectives of this project include:
 This project is **not production-ready** and is documented as a learning-focused proof-of-concept.  
 Some implementation details are intentionally generalized to respect confidentiality.
 
-<img width="687" height="821" alt="image" src="https://github.com/user-attachments/assets/a32838e4-c0f2-455d-992e-e49a189fbef7" />
-
 ---
 
 ## 📸 Hardware & Prototype
