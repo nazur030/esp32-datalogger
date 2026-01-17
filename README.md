@@ -90,32 +90,6 @@ and compatibility with industrial devices.
 
 ---
 
-### 💾 Local Storage
-
-- **SD Card Module (SPI-based)**  
-- Used for local data logging and offline storage  
-- Provides redundancy when network connectivity is unavailable  
-
-Design considerations:
-- SPI bus shared with proper chip-select handling  
-- File-based logging for easier data extraction and debugging  
-
----
-
-### 📡 Communication Hardware
-
-The datalogger supports multiple communication options, depending on deployment needs:
-
-- **LoRa Module** – for long-range, low-power communication  
-- **GSM Module** – for cellular connectivity where LoRa is unavailable  
-- **Wi-Fi** – for local or lab-based testing  
-
-Only one communication module is typically active per configuration to:
-- Reduce power consumption
-- Simplify firmware logic
-- Avoid RF interference issues
-
----
 ### 📸 Hardware Design Images
 
 <img width="901" height="642" alt="image" src="https://github.com/user-attachments/assets/8874f59f-1682-433d-82f1-90873ce634fc" />
@@ -146,19 +120,6 @@ The system is designed to support multiple communication technologies, selectabl
   - Primarily used for development, testing, or local deployments
 
 Only one communication method is active per configuration to reduce complexity and power consumption.
-
----
-
-### 📦 Data Transmission Strategy
-
-- Sensor data is first **stored locally** on the SD card
-- Data is then packaged into a structured payload
-- Transmission is attempted at defined intervals
-- If transmission fails, data remains stored and can be retried later
-
-This approach ensures:
-- No data loss during temporary network outages
-- Continuous operation even in unstable connectivity environments
 
 ---
 
